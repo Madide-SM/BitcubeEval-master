@@ -10,12 +10,17 @@ namespace Bitcubeeval.Controllers
     {
         public ActionResult Index()
         {
+            if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our Past Events.";
 
             return View();
         }
@@ -24,6 +29,10 @@ namespace Bitcubeeval.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Services()
+        {
             return View();
         }
     }

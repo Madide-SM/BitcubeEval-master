@@ -41,14 +41,15 @@ namespace Bitcubeeval.Models
 
     public class ForgotViewModel
     {
-        [Required]
+
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email id is required")]
+
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -65,16 +66,20 @@ namespace Bitcubeeval.Models
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
+        [Display(Name = "First Name")]
+        public string Name { get; set; }
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Last Name")]
+        public string Surname { get; set; }
+        [Required(ErrorMessage = "Email id is required")]
+        [Display(Name = "Email")]
+        [EmailAddress]
+        public string Email { get; set; }
+        [Required]
+        [RegularExpression(pattern: @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d!@#$%^&*()_+=]{6,}$", ErrorMessage = "Password must have at least 1 uppercase character, 1 lowercase character, 1 special character,1 number and must be at least 6 characters long")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
@@ -110,3 +115,4 @@ namespace Bitcubeeval.Models
         public string Email { get; set; }
     }
 }
+
