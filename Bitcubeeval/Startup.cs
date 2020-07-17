@@ -4,7 +4,7 @@ using Bitcubeeval.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-[assembly: OwinStartupAttribute(typeof(BitCubeApp.Startup))]
+[assembly: OwinStartupAttribute(typeof(Bitcubeeval.Startup))]
 namespace Bitcubeeval
 {
     public partial class Startup

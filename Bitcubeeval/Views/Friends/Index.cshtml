@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Bitcubeeval.Models.Friends>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover table-condensed" id="my_list">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FriendName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <a href="@Url.Action("Edit", "Items", new { id = item.pic })" title="View Details" , rel="nofollow">
+                <img src="data:image/png;base64,@Convert.ToBase64String(item.pic, 0, item.pic.Length)" style="width: 60px; height: 60px" alt="" />
+            </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FriendName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <th></th>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+    }
+
+</table>

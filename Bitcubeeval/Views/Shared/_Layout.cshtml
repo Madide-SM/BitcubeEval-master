@@ -17,16 +17,18 @@
         <div class="container">
 
             <div id="logo" class="pull-left">
-                <h2><a href="@Url.Action("Index","Home")" class="scrollto">BitCubeApp-<span style="color:#0026ff">Picnic</span></a></h2>
+                <h2><a href="@Url.Action("Index","Home")" class="scrollto">Bitcubeeval-<span style="color:#0026ff">Picnic</span></a></h2>
             </div>
             <div>
 
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                        <li><a href="@Url.Action("Contact","Home")">My portfolio</a></li>
+                        <li><a href="@Url.Action("Contact","Home")">Profile</a></li>
+                        <li><a href="@Url.Action("Index","Friends")">Friends</a></li>
                         <li><a href="@Url.Action("Index","Images")">Gallery</a></li>
                         <li><a href="@Url.Action("Services","Home")">Services</a></li>
+
                         @Html.Partial("_LoginPartial")
 
                     </ul>
@@ -43,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year BitCubeApp-Madide-SM, Applicant</p>
+            <p>&copy; @DateTime.Now.Year Bitcubeeval-Madide-SM, Applicant</p>
         </footer>
     </div>
 

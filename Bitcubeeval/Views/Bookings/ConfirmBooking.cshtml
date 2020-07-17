@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNet.Identity;
+@model Bitcubeeval.Models.Booking
+
+@{
+    ViewBag.Title = "Booking Success";
+}
+
+
+   <h4 class="text-success text-center alert-dismissable">Booking Successfully Created</h4>
+    <hr />
+    <div class="col alert-success">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Location.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateCreated)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EventDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EventDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BookingDiscount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BookingDiscount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DepositFee)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DepositFee)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumOfPeople)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumOfPeople)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalCost)
+            </dd>
+        </dl>
+    </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingId }) | 
+</p>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Bitcubeeval.Models.Image>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gallery</h2>
+<hr />
+@Html.ActionLink("Add Picture", "Create", "Images")
+
+<hr />
+<br /><br />
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        var base64 = Convert.ToBase64String(item.ImageByte);
+        var ImgSource = string.Format("data:image/gif;base64,{0}", base64);
+        @*<div>
+                <img class="d-block w-100" src="@ImgSource" width="200" height="300">
+            </div>*@
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+            <div class="card car-card">
+                <img src="@ImgSource" class="card-img-top car-img" width="200" height="300" alt="">
+                <div class="card-body">
+                    <div class="car-info d-flex justify-content-between">
+                        <div class="car-text text-uppercase">
+                            <h6 class="font-weight-bold"></h6>
+                            <h6></h6>
+                        </div>
+                        <h5 class="car-value align-self-centre py-2 px3">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Add Picture", "Create", new { id = item.ImageId })<br />
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ImageId })<br />
+                                @Html.ActionLink("Details", "Details", new { id = item.ImageId })<br />
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ImageId })<br />
+                            }
+
+
+                        </h5>
+                    </div>
+                </div>
+                <div class="card-footer text-capitalize d-flex justify-content-between">
+                    <div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

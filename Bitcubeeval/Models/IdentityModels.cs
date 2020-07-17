@@ -21,7 +21,7 @@ namespace Bitcubeeval.Models
             return userIdentity;
         }
 
-        public virtual ICollection<Booking> Bookings { get; set; }
+       // public virtual ICollection<Booking> Bookings { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,12 +37,13 @@ namespace Bitcubeeval.Models
         }
 
 
-        //public System.Data.Entity.DbSet<Bitcubeeval.Models.Booking> Bookings { get; set; }
-        //public System.Data.Entity.DbSet<Bitcubeeval.Models.FoodItem> FoodItems { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.Friends> Friends { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.Booking> Bookings { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.FoodItem> FoodItems { get; set; }
 
-        //public System.Data.Entity.DbSet<Bitcubeeval.Models.Location> Locations { get; set; }
-        ////public System.Data.Entity.DbSet<Bitcubeeval.Models.Item> Items { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.Location> Locations { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.Item> Items { get; set; }
 
-        //public System.Data.Entity.DbSet<Bitcubeeval.Models.Image> Images { get; set; }
+        public System.Data.Entity.DbSet<Bitcubeeval.Models.Image> Images { get; set; }
     }
 }
